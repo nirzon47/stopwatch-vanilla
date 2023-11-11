@@ -10,20 +10,35 @@
 
 		<!-- Scripts -->
 		<script src="script.js" defer></script>
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+		<!-- Meta tags -->
+		<meta
+			name="description"
+			content="Simple, sleek and fast stopwatch. Made with vanilla Javascript and TailwindCSS."
+		/>
+		<meta
+			name="keywords"
+			content="stopwatch, Javascript, vanilla javascript, tailwindcss, daisyui, html, css, stopwatch project"
+		/>
+		<meta name="author" content="Nirzon Taru Karmakar" />
+		<meta name="robots" content="index, follow" />
 	</head>
-	<body class="h-screen w-screen grid place-content-center p-4">
+	<body class="grid w-screen h-screen p-4 place-content-center">
 		<!-- Heading -->
-		<h1 class="text-lg md:text-4xl text-center font-bold font-mono mb-16">
+		<h1 class="mb-16 font-mono text-lg font-bold text-center md:text-4xl">
 			Stopwatch
 		</h1>
 
 		<!-- Stopwatch Content -->
-		<div class="grid grid-flow-col gap-1 md:gap-5 text-center mb-12">
+		<div class="grid grid-flow-col gap-1 mb-12 text-center md:gap-5">
 			<!-- Hours container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
+				class="flex flex-col items-center p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="countdown text-lg font-mono md:text-5xl">
+				<span class="font-mono text-lg countdown md:text-5xl">
 					<span style="--value: 0" id="hours"></span>
 				</span>
 				HH
@@ -31,9 +46,9 @@
 
 			<!-- Minutes container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
+				class="flex flex-col items-center p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="countdown text-lg font-mono md:text-5xl">
+				<span class="font-mono text-lg countdown md:text-5xl">
 					<span style="--value: 0" id="minutes"></span>
 				</span>
 				MM
@@ -41,9 +56,9 @@
 
 			<!-- Seconds container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
+				class="flex flex-col items-center p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="countdown text-lg font-mono md:text-5xl">
+				<span class="font-mono text-lg countdown md:text-5xl">
 					<span style="--value: 0" id="seconds"></span>
 				</span>
 				SS
@@ -51,9 +66,9 @@
 
 			<!-- Milliseconds container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
+				class="flex flex-col items-center p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="text-lg font-mono md:text-5xl" id="milliseconds">
+				<span class="font-mono text-lg md:text-5xl" id="milliseconds">
 					000
 				</span>
 				MS
@@ -62,17 +77,17 @@
 
 		<!-- Button group -->
 		<section
-			class="w-full flex items-center justify-center gap-4 flex-wrap"
+			class="flex flex-wrap items-center justify-center w-full gap-4"
 			id="start"
 		>
 			<!-- Start button -->
-			<button class="btn btn-primary w-32" id="start">Start</button>
+			<button class="w-32 btn btn-primary" id="start">Start</button>
 
 			<!-- Stop button -->
-			<button class="btn btn-secondary w-32" id="stop">Stop</button>
+			<button class="w-32 btn btn-secondary" id="stop">Stop</button>
 
 			<!-- Reset button -->
-			<button class="btn btn-accent w-32" id="reset">Reset</button>
+			<button class="w-32 btn btn-accent" id="reset">Reset</button>
 		</section>
 	</body>
 </html>
