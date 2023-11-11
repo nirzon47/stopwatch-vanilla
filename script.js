@@ -6,6 +6,7 @@ const milliseconds = document.getElementById('milliseconds')
 
 let startTime
 let running = false
+let elapsed = 0
 let time
 
 const start = document.getElementById('start')
@@ -25,13 +26,25 @@ stop.addEventListener('click', (event) => {
 	stopStopwatch()
 })
 
+reset.addEventListener('click', (event) => {
+	event.stopPropagation()
+
+	resetStopwatch()
+})
+
 // Functions
+
+/**
+ * Starts the stopwatch if it is not already running.
+ *
+ * @return {undefined} No return value.
+ */
 const startStopwatch = () => {
 	if (running) {
 		return
 	}
 
-	startTime = startTime || new Date().getTime()
+	startTime = Date.now() - elapsed
 	time = setInterval(() => {
 		updateTime()
 	}, 10)
@@ -39,13 +52,37 @@ const startStopwatch = () => {
 	running = true
 }
 
+/**
+ * Stops the stopwatch if it is currently running.
+ *
+ * @returns {undefined} This function does not return a value.
+ */
 const stopStopwatch = () => {
 	if (running) {
+		elapsed = Date.now() - startTime
 		running = false
 		clearInterval(time)
 	}
 }
 
+/**
+ * Resets the stopwatch by setting the elapsed time to 0, stopping the stopwatch,
+ * clearing the interval, and resetting the fields.
+ *
+ * @return {type} description of return value
+ */
+const resetStopwatch = () => {
+	elapsed = 0
+	running = false
+	clearInterval(time)
+	resetFields()
+}
+
+/**
+ * Updates the time displayed on the page based on the elapsed time since the start of the timer.
+ *
+ * @return {None} None - This function does not return any value.
+ */
 const updateTime = () => {
 	const elapsed = Date.now() - startTime
 	const updatedHours = Math.floor(elapsed / 3600000)
@@ -57,4 +94,17 @@ const updateTime = () => {
 	seconds.style.setProperty('--value', updatedSeconds)
 	minutes.style.setProperty('--value', updatedMinutes)
 	hours.style.setProperty('--value', updatedHours)
+}
+
+/**
+ * Resets the fields of the timer display.
+ *
+ * @param {none}
+ * @return {none}
+ */
+const resetFields = () => {
+	milliseconds.textContent = '000'
+	seconds.style.setProperty('--value', 0)
+	minutes.style.setProperty('--value', 0)
+	hours.style.setProperty('--value', 0)
 }
