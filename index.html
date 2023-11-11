@@ -21,7 +21,7 @@
 		<div class="grid grid-flow-col gap-1 md:gap-5 text-center mb-12">
 			<!-- Hours container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
+				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
 			>
 				<span class="countdown text-lg font-mono md:text-5xl">
 					<span style="--value: 0" id="hours"></span>
@@ -31,7 +31,7 @@
 
 			<!-- Minutes container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
+				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
 			>
 				<span class="countdown text-lg font-mono md:text-5xl">
 					<span style="--value: 0" id="minutes"></span>
@@ -41,7 +41,7 @@
 
 			<!-- Seconds container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
+				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
 			>
 				<span class="countdown text-lg font-mono md:text-5xl">
 					<span style="--value: 0" id="seconds"></span>
@@ -51,7 +51,7 @@
 
 			<!-- Milliseconds container -->
 			<div
-				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
+				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content items-center"
 			>
 				<span class="countdown text-lg font-mono md:text-5xl">
 					<span style="--value: 0" id="milliseconds"></span>
@@ -61,9 +61,18 @@
 		</div>
 
 		<!-- Button group -->
-		<section class="w-full flex items-center justify-center gap-4" id="start">
+		<section
+			class="w-full flex items-center justify-center gap-4 flex-wrap"
+			id="start"
+		>
+			<!-- Start button -->
 			<button class="btn btn-primary w-32" id="start">Start</button>
+
+			<!-- Stop button -->
 			<button class="btn btn-secondary w-32" id="stop">Stop</button>
+
+			<!-- Reset button -->
+			<button class="btn btn-accent w-32" id="reset">Reset</button>
 		</section>
 	</body>
 </html>
