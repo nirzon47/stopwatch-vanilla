@@ -8,51 +8,56 @@
 		<!-- Tailwind -->
 		<link rel="stylesheet" href="styles/output.css" />
 	</head>
-	<body class="h-screen w-screen grid place-content-center">
+	<body class="h-screen w-screen grid place-content-center p-4">
+		<!-- Heading -->
+		<h1 class="text-lg md:text-4xl text-center font-bold font-mono mb-8">
+			Stopwatch
+		</h1>
+
 		<!-- Stopwatch Content -->
 		<div class="grid grid-flow-col gap-5 text-center auto-cols-max mb-12">
 			<!-- Hours container -->
 			<div
 				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="countdown font-mono text-5xl">
-					<span style="--value: 0"></span>
+				<span class="countdown text-xl font-mono md:text-5xl">
+					<span style="--value: 0" id="hours"></span>
 				</span>
-				hours
+				HH
 			</div>
 
 			<!-- Minutes container -->
 			<div
 				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="countdown font-mono text-5xl">
-					<span style="--value: 0"></span>
+				<span class="countdown text-xl font-mono md:text-5xl">
+					<span style="--value: 0" id="minutes"></span>
 				</span>
-				min
+				MM
 			</div>
 
 			<!-- Seconds container -->
 			<div
 				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="countdown font-mono text-5xl">
-					<span style="--value: 0"></span>
+				<span class="countdown text-xl font-mono md:text-5xl">
+					<span style="--value: 0" id="seconds"></span>
 				</span>
-				sec
+				SS
 			</div>
 
 			<!-- Milliseconds container -->
 			<div
 				class="flex flex-col p-6 bg-neutral rounded-box text-neutral-content"
 			>
-				<span class="countdown font-mono text-5xl">
-					<span style="--value: 0"></span>
+				<span class="countdown text-xl font-mono md:text-5xl">
+					<span style="--value: 0" id="milliseconds"></span>
 				</span>
-				ms
+				MS
 			</div>
 		</div>
 
 		<!-- Start button -->
-		<button class="btn btn-primary w-1/2 mx-auto">Start</button>
+		<button class="btn btn-primary w-1/2 mx-auto" id="start">Start</button>
 	</body>
 </html>
